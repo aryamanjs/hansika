@@ -72,7 +72,7 @@ export default function Valentine() {
             width={250}
             height={250}
           />
-          <div className="text-center text-2xl mt-2">Yay! Now I'm happy!</div>
+          <div className="text-center text-2xl mt-2">{"Yay! Now I'm happy!"}</div>
         </>
       )}
     </section>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Valentine from "@src/containers/valentine/page";
 
 export default function Home() {
