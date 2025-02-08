@@ -38,15 +38,16 @@ export default function Valentine() {
     <section className="valentine-box select-none">
       {stage === "stage-no" && (
         <>
-          <div className="">
+          <div className="text-center">
             <Image
+              className="mx-auto"
               src="/valentine/valentine-bear.gif"
               alt="valentine bear | valentine"
               width={250}
               height={250}
             />
           </div>
-          <div className="text-2xl mt-2">Will you be my Valentine?</div>
+          <div className="text-2xl mt-2 text-gray-900 text-center">Will you be my Valentine?</div>
           <div className="flex items-center justify-center mt-3 text-center">
             <button
               className="bg-green-500 text-white rounded me-2 py-1 px-2"
@@ -72,7 +73,7 @@ export default function Valentine() {
             width={250}
             height={250}
           />
-          <div className="text-center text-2xl mt-2">{"Yay! Now I'm happy!"}</div>
+          <div className="text-center text-2xl mt-2 text-gray-900">{"Yay! Now I'm happy!"}</div>
         </>
       )}
     </section>
