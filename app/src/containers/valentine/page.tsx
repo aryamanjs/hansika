@@ -18,8 +18,14 @@ const noTextsArr = [
   "No",
 ];
 
+enum Stages {
+  stageNo = "stage-no",
+  stageYes = "stage-yes",
+  unhappy = "unhappy",
+}
+
 export default function Valentine() {
-  const [stage, setStage] = useState("stage-no");
+  const [stage, setStage] = useState(Stages.stageNo);
   const [counter, setCounter] = useState(0);
 
   const changeNoText = () => {
@@ -27,6 +33,7 @@ export default function Valentine() {
       if (prevState < noTextsArr.length - 1) {
         return prevState + 1;
       } else {
+        setStage(Stages.unhappy);
         return 0;
       }
     });
@@ -36,7 +43,7 @@ export default function Valentine() {
 
   return (
     <section className="valentine-box select-none">
-      {stage === "stage-no" && (
+      {stage === Stages.stageNo && (
         <>
           <div className="text-center">
             <Image
@@ -47,12 +54,14 @@ export default function Valentine() {
               height={250}
             />
           </div>
-          <div className="text-2xl mt-2 text-gray-900 text-center">Will you be my Valentine?</div>
+          <div className="text-2xl mt-2 text-gray-900 text-center">
+            Will you be my Valentine?
+          </div>
           <div className="flex items-center justify-center mt-3 text-center">
             <button
               className="bg-green-500 text-white rounded me-2 py-1 px-2"
-              style={{ fontSize: counter ? `${(counter + 1) * 18}px` : "18px" }}
-              onClick={() => setStage("stage-yes")}
+              style={{ fontSize: counter ? `${(counter + 1) * 15}px` : "18px" }}
+              onClick={() => setStage(Stages.stageYes)}
             >
               Yes
             </button>
@@ -65,7 +74,7 @@ export default function Valentine() {
           </div>
         </>
       )}
-      {stage === "stage-yes" && (
+      {stage === Stages.stageYes && (
         <>
           <Image
             src="/valentine/bear-kiss-bear-kisses.gif"
@@ -73,7 +82,22 @@ export default function Valentine() {
             width={250}
             height={250}
           />
-          <div className="text-center text-2xl mt-2 text-gray-900">{"Yay! Now I'm happy!"}</div>
+          <div className="text-center text-2xl mt-2 text-gray-900">
+            {"Yay! Now I'm happy!"}
+          </div>
+        </>
+      )}
+      {stage === Stages.unhappy && (
+        <>
+          <Image
+            src="/valentine/unhappy-bear.gif"
+            alt="valentine kiss | valentine"
+            width={250}
+            height={250}
+          />
+          <div className="text-center text-2xl mt-2 text-gray-900">
+            {"OK! Bye..."}
+          </div>
         </>
       )}
     </section>
