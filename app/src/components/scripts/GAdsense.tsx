@@ -9,5 +9,5 @@ export default function GAdsense() {
     return null;
   }
 
-  return <Script async crossOrigin="anonymous" src={config.src} />;
+  return <Script async crossOrigin="anonymous" src={config.src} strategy="afterInteractive" />;
 }
