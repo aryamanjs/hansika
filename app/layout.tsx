@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import GTag from "@src/components/scripts/GTag";
-// import GAdsense from "@src/components/scripts/GAdsense";
+import GAdsense from "@src/components/scripts/GAdsense";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-5308266585816918" />
+        <GAdsense />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -39,7 +39,6 @@ export default function RootLayout({
         {children}
         <Analytics />
         <GTag />
-        {/* <GAdsense /> */}
       </body>
     </html>
   );
