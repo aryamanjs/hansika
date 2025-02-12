@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import GTag from "@src/components/scripts/GTag";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,8 +20,6 @@ export const metadata: Metadata = {
   verification: {
     google: "tBMC6Cdldk7qGoDdcdwwvKPBSiRURtd02xVU9AO4kxw",
   },
-
-  
 };
 
 export default function RootLayout({
@@ -35,6 +34,7 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
+        <GTag />
       </body>
     </html>
   );
