@@ -6,6 +6,10 @@ const config = {
 };
 
 export default function GTag() {
+  if (process.env.NODE_ENV !== "production") {
+    return null;
+  }
+
   return (
     <>
       <GoogleAnalytics gaId={config.id} />
