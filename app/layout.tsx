@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import GTag from "@src/components/scripts/GTag";
-import GAdsense from "@src/components/scripts/GAdsense";
+// import GAdsense from "@src/components/scripts/GAdsense";
 import "./globals.css";
 
 const geistSans = Geist({
