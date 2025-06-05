@@ -55,7 +55,7 @@ export default function Valentine() {
             />
           </div>
           <div className="text-2xl mt-2 text-gray-900 text-center">
-            Will you be my Valentine?
+            Hey Hansika are you free this weekend?
           </div>
           <div className="flex items-center justify-center mt-3 text-center">
             <button
